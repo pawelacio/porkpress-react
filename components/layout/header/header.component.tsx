@@ -1,7 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 import {
-  HeaderContainer
+  HeaderContainer,
+  HeaderLogo,
+  HeaderNav,
+  HeaderUserBox,
+  HeaderTop,
+  HeaderBottom,
+  HeaderNavItem,
 } from './header.styled';
 
 export interface HeaderProps {
@@ -11,7 +18,25 @@ export interface HeaderProps {
 export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <HeaderContainer>
-      Simple header
+      <HeaderTop>
+        <Link href="/">
+          <HeaderLogo>
+            PorkPRESS
+          </HeaderLogo>
+        </Link>
+        <HeaderUserBox>
+          Paweł Kaczmarek
+        </HeaderUserBox>
+      </HeaderTop>
+      <HeaderBottom>
+        <HeaderNav>
+          <Link href="/components">
+            <HeaderNavItem>
+              Components
+            </HeaderNavItem>
+          </Link>
+        </HeaderNav>
+      </HeaderBottom>
     </HeaderContainer>
   );
 }

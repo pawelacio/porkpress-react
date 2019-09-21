@@ -5,7 +5,7 @@ import { GlobalStyle } from '../components/styles/global';
 const Index = () => (
   <>
   <Layout>
-    myLayout
+    Components
   </Layout>
   <GlobalStyle />
   </>
