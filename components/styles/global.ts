@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
+import fontFaces from './fonts';
+
 export const GlobalStyle = createGlobalStyle`
+
+  ${ fontFaces }
 
   html {
     box-sizing: border-box;
@@ -14,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-family: 'OpenSans';
     margin: 0;
     padding: 0;
   }
