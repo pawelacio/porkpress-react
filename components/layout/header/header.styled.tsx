@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  height: 70px;
   padding: 16px 32px;
   top: 0;
   left: 0;
