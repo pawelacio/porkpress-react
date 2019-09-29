@@ -1,9 +1,7 @@
 import React from 'react';
 import { Layout } from '../components/layout/layout.component';
-import { GlobalStyle } from '../components/styles/global';
 import { GridContainer, GridElement } from '../components/layout/grid/grid.styled';
 const Index = () => (
-  <>
   <Layout>
     <GridContainer>
       Components
@@ -47,8 +45,6 @@ const Index = () => (
       <GridElement width={ 1 }>col-1</GridElement>
     </GridContainer>
   </Layout>
-  <GlobalStyle />
-  </>
 );
 
 

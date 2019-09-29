@@ -25,7 +25,9 @@ export const Header: React.FC<HeaderProps> = (props) => {
           </HeaderLogo>
         </Link>
         <HeaderUserBox>
-          Paweł Kaczmarek
+          <Link href="/login">
+          Login
+          </Link>
         </HeaderUserBox>
       </HeaderTop>
       <HeaderBottom>
