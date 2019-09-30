@@ -11,13 +11,19 @@ export const GridContainer = styled.div`
 
 export const GridElement = styled.div<{ width }>`
   flex-basis: ${ props => props.width ? `${ props.width/12*100 }%` : '100%' };
+`;
 
-  /* temporaryly */
+export const GridSampler = styled.div`
   background-color: pink;
   border: LavenderBlush 2px solid;
   border-radius: 8px;
-  padding: 32px 16px;
+  padding: 24px 16px;
   text-align: center;
+`;
+
+export const GridSpacer = styled.div`
+  height: 48px;
+  width: 100%;
 `;
 
 

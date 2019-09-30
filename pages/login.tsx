@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from '../components/layout/layout.component';
 import { Formik, Form, Field, FieldProps, FormikProps, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Input } from '../components/ui/inputs/input/input.component';
 
 interface LoginValues {
   username: string,
@@ -42,8 +43,28 @@ const Login = () => {
       >
          {({ errors, touched }: FormikProps<LoginValues>) => (
           <Form>
-            <Field name="username" />
-            <Field name="password" />
+            <Field name="username">
+              {({ field }: FieldProps<LoginValues>) => (
+                <Input
+                  type="text"
+                  placeholder="Username"
+                  error={errors[(field.name as keyof LoginValues)]}
+                  isTouched={touched[(field.name as keyof LoginValues)]}
+                  {...field}
+                />
+              )}
+            </Field>
+            <Field name="password">
+              {({ field }: FieldProps<LoginValues>) => (
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  error={errors[(field.name as keyof LoginValues)]}
+                  isTouched={touched[(field.name as keyof LoginValues)]}
+                  {...field}
+                />
+              )}
+            </Field>
             <button type="submit">
               Submit!
             </button>
