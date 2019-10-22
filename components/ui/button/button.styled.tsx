@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { White } from '../../styles/colors';
+import styled, { css } from 'styled-components';
+import { White, Dark, Blue, Red, Orange } from '../../styles/colors';
 
-export enum StyledButtonTypes {
+export enum ButtonTypes {
   DEFAULT = "DEFAULT",
   WARNING = "WARNING",
   INFORMATION = "INFORMATION",
@@ -9,7 +9,7 @@ export enum StyledButtonTypes {
   ERROR = "ERROR",
 }
 
-export enum StyledButtonSizes {
+export enum ButtonSizes {
   SMALL = 'small',
   MEDIUM = 'medium',
   BIG = 'big',
@@ -17,16 +17,31 @@ export enum StyledButtonSizes {
 
 export interface StyledButtonProps {
   color?: string,
-  buttonType?: StyledButtonTypes,
-  size?: StyledButtonSizes,
+  buttonType?: ButtonTypes,
+  size?: ButtonSizes,
   disabled?: boolean,
   readonly?: boolean,
-  
 }
 
-export const Button = styled.button<StyledButtonProps>`
+export const SolidButton = styled.button<StyledButtonProps>`
   min-width: 100px;
-  padding: 8px 16px;
-  background-color: ${ props => props.color ? props.color : White };
-  color: ${ props => props.color ? props.color : White };
+  line-height: 20px;
+  padding: 8px 24px;
+  font-size: 16px;
+  background-color: ${ Orange };
+  color: ${ White };
+  border-radius: 8px;
+  border: 0;
+
+  ${ props => props.size === ButtonSizes.SMALL && css`
+    padding: 4px 16px;
+  `}
+
+  ${ props => props.size === ButtonSizes.MEDIUM && css`
+    padding: 8px 24px;
+  `}
+
+  ${ props => props.size === ButtonSizes.BIG && css`
+    padding: 16px 32px;
+  `}
 `;
