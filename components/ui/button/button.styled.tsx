@@ -31,7 +31,13 @@ export const SolidButton = styled.button<StyledButtonProps>`
   background-color: ${ Orange };
   color: ${ White };
   border-radius: 8px;
-  border: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  outline: none;
+
+  &:focus {
+    border: 2px solid ${ Dark }
+  }
 
   ${ props => props.size === ButtonSizes.SMALL && css`
     padding: 4px 16px;
