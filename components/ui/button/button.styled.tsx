@@ -44,4 +44,9 @@ export const SolidButton = styled.button<StyledButtonProps>`
   ${ props => props.size === ButtonSizes.BIG && css`
     padding: 16px 32px;
   `}
+
+  ${ props => props.disabled && css`
+    background-color: #BBBBBB;
+    cursor: not-allowed;
+  `}
 `;

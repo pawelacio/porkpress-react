@@ -114,19 +114,24 @@ const Index = () => (
       <GridElement>
         <Head3>Solid Buttons</Head3>
       </GridElement>
-      <GridElement width={ 3 }>
+      <GridElement width={ 2 }>
         <SolidButton size={ ButtonSizes.BIG }>
           Button Big
         </SolidButton>
       </GridElement>
-      <GridElement width={ 3 }>
+      <GridElement width={ 2 }>
         <SolidButton size={ ButtonSizes.MEDIUM }>
           Button Medium
         </SolidButton>
       </GridElement>
-      <GridElement width={ 3 }>
+      <GridElement width={ 2 }>
         <SolidButton size={ ButtonSizes.SMALL }>
           Button Small
+        </SolidButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <SolidButton size={ ButtonSizes.MEDIUM } disabled>
+          Button Disabled
         </SolidButton>
       </GridElement>
     </GridContainer>
