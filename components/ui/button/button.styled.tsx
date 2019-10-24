@@ -21,6 +21,7 @@ export interface StyledButtonProps {
   size?: ButtonSizes,
   disabled?: boolean,
   readonly?: boolean,
+  uppercase?: boolean,
 }
 
 export const BasicButton = styled.button<StyledButtonProps>`
@@ -32,6 +33,7 @@ export const BasicButton = styled.button<StyledButtonProps>`
   cursor: pointer;
   border: 2px solid transparent;
   outline: none;
+  transition: all .1s;
 
   &:focus {
     border: 2px solid ${ Dark }
@@ -53,11 +55,22 @@ export const BasicButton = styled.button<StyledButtonProps>`
     background-color: #BBBBBB;
     cursor: not-allowed;
   `}
+
+  ${ props => props.uppercase && css`
+    text-transform: uppercase;
+  `}
 `;
 
 export const SolidButton = styled(BasicButton)`
   background-color: ${ Orange };
   color: ${ White };
+
+  &:hover {
+    ${ props => !props.disabled && css`
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      background-color: ${ Dark };
+    `}
+  }
 
   ${ props => props.disabled && css`
     background-color: #BBBBBB;
@@ -70,6 +83,13 @@ export const GhostButton = styled(BasicButton)`
   background-color: transparent;
   border: 1px solid ${ Orange };
 
+  &:hover {
+    ${ props => !props.disabled && css`
+    color: ${ Dark };
+    border: 1px solid ${ Dark };
+    `}
+  }
+
   ${ props => props.disabled && css`
     color: #BBBBBB;
     cursor: not-allowed;
@@ -81,6 +101,14 @@ export const RoundButton = styled(BasicButton)`
   background-color: ${ Orange };
   color: ${ White };
   border-radius: 28px;
+
+  &:hover {
+    ${ props => !props.disabled && css`
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      background-color: ${ Dark };
+    `}
+  }
+
 
   ${ props => props.disabled && css`
     background-color: #BBBBBB;
