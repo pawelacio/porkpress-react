@@ -3,13 +3,24 @@ import { Layout } from '../components/layout/layout.component';
 import { GridContainer, GridElement, GridSampler, GridSpacer } from '../components/layout/grid/grid.styled';
 import { Input } from '../components/ui/inputs/input/input.component';
 import { Head1, Head2, Head3, Head4, Head5, Head6 } from '../components/styles/headers';
+import { 
+  ButtonTypes,
+  ButtonSizes,
+  SolidButton,
+  GhostButton,
+  RoundButton,
+} from '../components/ui/button/button.styled';
 
 const Index = () => (
   <Layout>
-    <GridSpacer/>
     <GridContainer>
       <GridElement>
-        <Head1>Grid</Head1>
+        <Head1>Design System</Head1>
+      </GridElement>
+    </GridContainer>
+    <GridContainer>
+      <GridElement>
+        <Head3>Grid</Head3>
       </GridElement>
     </GridContainer>
     <GridContainer>
@@ -55,7 +66,7 @@ const Index = () => (
     <GridSpacer/>
     <GridContainer>
       <GridElement>
-        <Head1>Typography exaples</Head1>
+        <Head3>Typography exaples</Head3>
       </GridElement>
       <GridElement>
         <Head1>This is heading h1</Head1>
@@ -78,7 +89,7 @@ const Index = () => (
     </GridContainer>
     <GridContainer>
       <GridElement>
-        <Head1>Inputs</Head1>
+        <Head3>Inputs</Head3>
       </GridElement>
       <GridElement width={ 3 }>
         <Input
@@ -105,6 +116,86 @@ const Index = () => (
         />
       </GridElement>
     </GridContainer>
+
+    <GridContainer>
+      <GridElement>
+        <Head3>Solid Buttons:</Head3>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <SolidButton size={ ButtonSizes.BIG }>
+          Button Big
+        </SolidButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <SolidButton size={ ButtonSizes.MEDIUM }>
+          Button Medium
+        </SolidButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <SolidButton size={ ButtonSizes.SMALL }>
+          Button Small
+        </SolidButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <SolidButton size={ ButtonSizes.MEDIUM } disabled>
+          Button Disabled
+        </SolidButton>
+      </GridElement>
+    </GridContainer>
+
+    <GridContainer>
+      <GridElement>
+        <Head3>Ghost Buttons:</Head3>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <GhostButton size={ ButtonSizes.BIG }>
+          Button Big
+        </GhostButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <GhostButton size={ ButtonSizes.MEDIUM }>
+          Button Medium
+        </GhostButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <GhostButton size={ ButtonSizes.SMALL }>
+          Button Small
+        </GhostButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <GhostButton size={ ButtonSizes.MEDIUM } disabled>
+          Button Disabled
+        </GhostButton>
+      </GridElement>
+    </GridContainer>
+
+    <GridContainer>
+      <GridElement>
+        <Head3>Rounded Buttons:</Head3>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <RoundButton size={ ButtonSizes.BIG }>
+          Button Big
+        </RoundButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <RoundButton size={ ButtonSizes.MEDIUM }>
+          Button Medium
+        </RoundButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <RoundButton size={ ButtonSizes.SMALL }>
+          Button Small
+        </RoundButton>
+      </GridElement>
+      <GridElement width={ 2 }>
+        <RoundButton size={ ButtonSizes.MEDIUM } disabled>
+          Button Disabled
+        </RoundButton>
+      </GridElement>
+    </GridContainer>
+
+    <GridSpacer/>
   </Layout>
 );
 
