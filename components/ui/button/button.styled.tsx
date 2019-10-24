@@ -58,10 +58,32 @@ export const BasicButton = styled.button<StyledButtonProps>`
 export const SolidButton = styled(BasicButton)`
   background-color: ${ Orange };
   color: ${ White };
+
+  ${ props => props.disabled && css`
+    background-color: #BBBBBB;
+    cursor: not-allowed;
+  `}
 `;
 
 export const GhostButton = styled(BasicButton)`
   color: ${ Orange };
   background-color: transparent;
   border: 1px solid ${ Orange };
+
+  ${ props => props.disabled && css`
+    color: #BBBBBB;
+    cursor: not-allowed;
+    border: 1px solid #BBBBBB;
+  `}
+`;
+
+export const RoundButton = styled(BasicButton)`
+  background-color: ${ Orange };
+  color: ${ White };
+  border-radius: 28px;
+
+  ${ props => props.disabled && css`
+    background-color: #BBBBBB;
+    cursor: not-allowed;
+  `}
 `;
