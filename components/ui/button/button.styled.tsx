@@ -23,13 +23,11 @@ export interface StyledButtonProps {
   readonly?: boolean,
 }
 
-export const SolidButton = styled.button<StyledButtonProps>`
+export const BasicButton = styled.button<StyledButtonProps>`
   min-width: 100px;
   line-height: 20px;
   padding: 8px 24px;
   font-size: 16px;
-  background-color: ${ Orange };
-  color: ${ White };
   border-radius: 8px;
   cursor: pointer;
   border: 2px solid transparent;
@@ -55,4 +53,15 @@ export const SolidButton = styled.button<StyledButtonProps>`
     background-color: #BBBBBB;
     cursor: not-allowed;
   `}
+`;
+
+export const SolidButton = styled(BasicButton)`
+  background-color: ${ Orange };
+  color: ${ White };
+`;
+
+export const GhostButton = styled(BasicButton)`
+  color: ${ Orange };
+  background-color: transparent;
+  border: 1px solid ${ Orange };
 `;
