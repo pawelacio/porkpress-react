@@ -10,8 +10,22 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../components/ui/inputs/input/input.component';
-import { GridContainer } from '../components/layout/grid/grid.styled';
+
+import { 
+  GridContainer,
+  GridElement,
+} from '../components/layout/grid/grid.styled';
+
 import { Head1 } from '../components/styles/headers';
+import { Card } from '../components/layout/card/card.styled';
+
+import { 
+  ButtonTypes,
+  ButtonSizes,
+  SolidButton,
+  GhostButton,
+  RoundButton,
+} from '../components/ui/button/button.styled';
 
 interface LoginValues {
   username: string,
@@ -44,43 +58,60 @@ const Login = () => {
 
   return (
     <Layout>
-      <GridContainer center fullHeight column>
-        <Head1>Log In</Head1>
-        <Formik
-          initialValues={ initialValues }
-          validationSchema={ LoginSchema }
-          onSubmit={ onFormSubmit }
-        >
-          {({ errors, touched }: FormikProps<LoginValues>) => (
-            <Form>
-              <Field name="username">
-                {({ field }: FieldProps<LoginValues>) => (
-                  <Input
-                    type="text"
-                    placeholder="Username"
-                    error={errors[(field.name as keyof LoginValues)]}
-                    isTouched={touched[(field.name as keyof LoginValues)]}
-                    {...field}
-                  />
-                )}
-              </Field>
-              <Field name="password">
-                {({ field }: FieldProps<LoginValues>) => (
-                  <Input
-                    type="password"
-                    placeholder="Password"
-                    error={errors[(field.name as keyof LoginValues)]}
-                    isTouched={touched[(field.name as keyof LoginValues)]}
-                    {...field}
-                  />
-                )}
-              </Field>
-              <button type="submit">
-                Submit!
-              </button>
-            </Form>
-          )}
-        </Formik>
+      <GridContainer center fullHeight>
+        <GridElement width={ 4 }>
+        <Card center>
+          <GridElement>
+            <Head1>Log In</Head1>
+          </GridElement>
+          <Formik
+            initialValues={ initialValues }
+            validationSchema={ LoginSchema }
+            onSubmit={ onFormSubmit }
+          >
+            {({ errors, touched }: FormikProps<LoginValues>) => (
+              <GridElement margin>
+                <Form>
+                  <Field name="username">
+                    {({ field }: FieldProps<LoginValues>) => (
+                      <GridElement margin>
+                        <Input
+                          type="text"
+                          placeholder="Username"
+                          error={errors[(field.name as keyof LoginValues)]}
+                          isTouched={touched[(field.name as keyof LoginValues)]}
+                          {...field}
+                        />
+                      </GridElement>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field }: FieldProps<LoginValues>) => (
+                      <GridElement margin>
+                        <Input
+                          type="password"
+                          placeholder="Password"
+                          error={errors[(field.name as keyof LoginValues)]}
+                          isTouched={touched[(field.name as keyof LoginValues)]}
+                          {...field}
+                        />
+                      </GridElement>
+                    )}
+                  </Field>
+                  <GridElement margin>
+                    <SolidButton 
+                      type="submit"
+                      size={ ButtonSizes.MEDIUM }
+                    >
+                      Log In
+                    </SolidButton>
+                  </GridElement>
+                </Form>
+              </GridElement>
+            )}
+          </Formik>
+        </Card>
+        </GridElement>
       </GridContainer>
     </Layout>
   )
