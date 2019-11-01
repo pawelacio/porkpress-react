@@ -35,7 +35,7 @@ export const GridContainer = styled.div<StyledGridProps>`
 export const GridElement = styled.div<StyledGridElementProps>`
   flex-basis: ${ props => props.width ? `${ props.width/12*100 }%` : '100%' };
   ${ props => props.margin && css`
-    margin: 8px 0;
+    margin: 16px 0;
   `}
 `;
 

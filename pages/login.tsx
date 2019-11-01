@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../components/layout/layout.component';
+import { setCookie } from 'nookies';
 import {
   Formik,
   Form,
@@ -9,15 +9,16 @@ import {
   ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
-import { Input } from '../components/ui/inputs/input/input.component';
 
+import UsersApi from '../api/users';
+import { Layout } from '../components/layout/layout.component';
+import { Card } from '../components/layout/card/card.styled';
+import { Input } from '../components/ui/inputs/input/input.component';
+import { Head1 } from '../components/styles/headers';
 import { 
   GridContainer,
   GridElement,
 } from '../components/layout/grid/grid.styled';
-
-import { Head1 } from '../components/styles/headers';
-import { Card } from '../components/layout/card/card.styled';
 
 import { 
   ButtonTypes,
@@ -52,8 +53,14 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
 
-  const onFormSubmit = (values: LoginValues) => {
-    console.log(values);
+  const onFormSubmit = async (values: LoginValues) => {
+
+    const response = await UsersApi.login(values);
+
+    setCookie({}, 'token', response.accessToken, {
+      maxAge: 30 * 24 * 60 * 60,
+      path: '/',
+    });
   }
 
   return (
