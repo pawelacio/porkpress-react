@@ -8,7 +8,8 @@ interface StyledGridProps {
 };
 
 interface StyledGridElementProps {
-  width?: number;
+  width?: number,
+  margin?: boolean,
 };
 
 export const GridContainer = styled.div<StyledGridProps>`
@@ -33,6 +34,9 @@ export const GridContainer = styled.div<StyledGridProps>`
 
 export const GridElement = styled.div<StyledGridElementProps>`
   flex-basis: ${ props => props.width ? `${ props.width/12*100 }%` : '100%' };
+  ${ props => props.margin && css`
+    margin: 16px 0;
+  `}
 `;
 
 export const GridSampler = styled.div`
