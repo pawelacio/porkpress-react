@@ -10,6 +10,7 @@ export const colors = {
   Aqua: '#BDD5EA',
   Blue: '#577399',
   Dark: '#495867',
+  Gray: '#EEEEEE',
   Green: '#6FD08C',
   Orange: '#FE5F55',
   Red: '#FB3640',
