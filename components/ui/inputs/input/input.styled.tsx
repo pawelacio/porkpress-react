@@ -27,6 +27,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   }
 
   &:disabled {
+    cursor: not-allowed;
     opacity: .5;
   }
 
@@ -34,12 +35,12 @@ export const StyledInput = styled.input<StyledInputProps>`
     opacity: .5;
   }
 
-  ${ props => props.isError && css`
+  ${ props => (props.isError && !props.disabled) && css`
     color: ${ colors.Red };
     border-color: ${ colors.Red };
   `}
 
-  ${ props => props.isSuccess && css`
+  ${ props => (props.isSuccess && !props.disabled) && css`
     color: ${ colors.Green };
     border-color: ${ colors.Green };
   `}

@@ -41,12 +41,12 @@ export const Input = (props : InputProps) => {
         isSuccess={ isSuccess }
         { ...props }
       />
-      { isSuccess && (
+      { isSuccess && !props.disabled && (
         <SuccessMessage>
           { props.success }
         </SuccessMessage>
       )}
-      { isError && (
+      { isError && !props.disabled && (
         <ErrorMessage>
           { props.error }
         </ErrorMessage>
